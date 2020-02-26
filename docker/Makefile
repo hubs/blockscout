@@ -6,6 +6,16 @@ PG_CONTAINER_NAME = postgres
 PG_CONTAINER_IMAGE = postgres:10.10
 THIS_FILE = $(lastword $(MAKEFILE_LIST))
 
+#只加了这几个参数
+ETHEREUM_JSONRPC_VARIANT=geth
+BLOCK_TRANSFORMER=clique
+BLOCKSCOUT_HOST=explorer.jiaozichain.com
+ETHEREUM_JSONRPC_HTTP_URL=localhost:8545
+ETHEREUM_JSONRPC_WS_URL=ws://localhost:8548
+BLOCKSCOUT_VERSION=v1.0
+LOGO=http://www.jiaozichain.com/img/logo.png
+LOGO_FOOTER=http://www.jiaozichain.com/img/logo.png
+
 ifeq ($(SYSTEM), Linux)
 	HOST=localhost
 endif
@@ -244,6 +254,7 @@ start: build postgres
 	@docker run --rm --name $(BS_CONTAINER_NAME) \
 					$(BLOCKSCOUT_CONTAINER_PARAMS) \
 					-p 4000:4000 \
+					-log-driver=none \
 					$(DOCKER_IMAGE) /bin/sh -c "mix phx.server"
 
 run: start
