@@ -37,7 +37,7 @@
                 <span class="dashboard-banner-network-stats-label">
                   <%= gettext "Average block time" %>
                 </span>
-                <span class="dashboard-banner-network-stats-value" data-selector="average-block-time">
+                <span class="dashboard-banner-network-stats-value">
                    <%= gettext "5 seconds" %>
                 </span>
               </div>
@@ -46,7 +46,7 @@
             <span class="dashboard-banner-network-stats-label">
               <%= gettext "Total transactions" %>
             </span>
-            <span class="dashboard-banner-network-stats-value" data-selector="transaction-count">
+            <span class="dashboard-banner-network-stats-value">
                <%= gettext "18" %>
             </span>
           </div>
@@ -62,7 +62,7 @@
             <span class="dashboard-banner-network-stats-label">
               <%= gettext "Wallet addresses" %>
             </span>
-            <span class="dashboard-banner-network-stats-value" data-selector="address-count">
+            <span class="dashboard-banner-network-stats-value">
               <%= gettext "12" %>
               <!-- <%= BlockScoutWeb.Cldr.Number.to_string!(@address_count, format: "#,###") %> -->
             </span>
