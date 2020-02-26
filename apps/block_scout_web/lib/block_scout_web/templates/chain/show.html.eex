@@ -4,7 +4,7 @@
       <!-- Graph and legend -->
       <div class="dashboard-banner-network-graph">
         <!-- Graph -->
-        <div class="dashboard-banner-chart">
+        <div class="dashboard-banner-chart" style="display:none;">
           <button data-chart-error-message class="alert alert-danger col-12 text-left mt-5" style="display: none;">
             <span><%= gettext("There was a problem loading the chart.") %></span>
           </button>
@@ -31,25 +31,23 @@
       <!-- Stats -->
       <div class="dashboard-banner-network-plain-container">
         <div class="dashboard-banner-network-stats">
-          <%= case @average_block_time do %>
-            <% {:error, :disabled} -> %>
-              <%= nil %>
-            <% average_block_time -> %>
+        
+            
               <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-1">
                 <span class="dashboard-banner-network-stats-label">
                   <%= gettext "Average block time" %>
                 </span>
                 <span class="dashboard-banner-network-stats-value" data-selector="average-block-time">
-                  <%= Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
+                   <%= gettext "5 seconds" %>
                 </span>
               </div>
-          <% end %>
+      
           <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-2">
             <span class="dashboard-banner-network-stats-label">
               <%= gettext "Total transactions" %>
             </span>
             <span class="dashboard-banner-network-stats-value" data-selector="transaction-count">
-              <%= BlockScoutWeb.Cldr.Number.to_string!(@transaction_estimated_count, format: "#,###") %>
+               <%= gettext "18" %>
             </span>
           </div>
           <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-3">
@@ -65,7 +63,8 @@
               <%= gettext "Wallet addresses" %>
             </span>
             <span class="dashboard-banner-network-stats-value" data-selector="address-count">
-              <%= BlockScoutWeb.Cldr.Number.to_string!(@address_count, format: "#,###") %>
+              <%= gettext "12" %>
+              <!-- <%= BlockScoutWeb.Cldr.Number.to_string!(@address_count, format: "#,###") %> -->
             </span>
           </div>
         </div>
