@@ -15,6 +15,8 @@ ETHEREUM_JSONRPC_WS_URL=ws://localhost:8548
 BLOCKSCOUT_VERSION=v1.0
 LOGO=http://www.jiaozichain.com/img/logo.png
 LOGO_FOOTER=http://www.jiaozichain.com/img/logo.png
+SUBNETWORK=Jiaozi Chain Explorer
+
 
 ifeq ($(SYSTEM), Linux)
 	HOST=localhost
